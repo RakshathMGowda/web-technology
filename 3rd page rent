@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-image:url("https://www.wallpapertip.com/wmimgs/54-541872_home-images-house-design-image-photos-pics-picture.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+      height: 90vh;
+           display: flex;
+           flex-direction: column;
+           gap: 50px;
+        justify-content: center;
+        align-items: center;
+        }
+        .container{
+            padding-left: 10px;
+            padding: 50px;
+           
+            
+            z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+   
+
+            border: 2px solid black;
+            border-radius: 20px;
+
+            }
+            input{
+                width: 70%;
+                height: 2vh;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+                justify-content: center;
+            }
+            input{
+                border: 2px solid black;
+                border-radius: 10px;
+                text-align: center;
+            }
+            .btn{
+                width: 90%;
+                height: 3vh;
+                border: 2px solid black;
+                border-radius: 10px;
+            }
+            .logo{
+        display:flex ;
+        flex-wrap: wrap;
+        font-weight: bolder;
+        margin-left:50px ;
+    }
+    .logo li:hover{
+        cursor: pointer;
+        
+        
+    }
+    select{
+        border: 2px solid black;
+        width: 90%;
+        height: 3vh;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <ul class="logo">
+            <li type="None"><img src="home1.jpg" alt="" width="40px" height="40px" style="border-radius:50%;"></li>
+            <li type="None" style="font-size:xx-large;">DreamDwellingsHub</li>
+        </ul>
+    </div>
+    <div class="container">
+    <form action="/search" method="post">
+        <div class="city">
+        <h2>City</h2>
+        <select id="city" name="city" onchange="change()">
+            <option>Select a city</option>
+            
+            <option value="Pune">Pune</option>
+            
+        </select>
+        <h1>Street</h1>
+        <select id="mySelect" name="street" onclick="GFG_Fun()">
+           
+        </select>
+    </div>
+    <div class="bhk">
+        <h2>Number of BHK</h2>
+        <input id="pi_input" type="range" min="1" max="10" step="1" name="bhk"/>
+        <p>no of BHK selected: <output id="value"></output></p>
+    </div>
+    <div class="min">
+        <h2>Rent   (in thousand)</h2>
+        <input type="number" name="budget" id=""></div>
+       
+        <div ><button class="btn">Search</button></div>
+        
+    </form>
+</div>
+    <script>
+        var slider = document.getElementById("pi_input");
+var output = document.getElementById("value");
+output.innerHTML = slider.value;
+
+        const value = document.querySelector("#value");
+const input = document.querySelector("#pi_input");
+value.textContent = input.value;
+input.addEventListener("input", (event) => {
+  value.textContent = event.target.value;
+});
+
+let elmts=['Alandi Road', 'Ambegaon Budruk', 'Anandnagar', 'Aundh',
+       'Aundh Road', 'Balaji Nagar', 'Baner']
+
+
+       let select = document.getElementById("mySelect");
+       function change(){
+    let city=document.getElementById("city")
+console.log(city.value)}
+       function GFG_Fun() {
+        for (let i = 0; i < elmts.length; i++) {
+                let optn = elmts[i];
+                let el = document.createElement("option");
+                el.textContent = optn;
+                el.value = optn;
+                select.appendChild(el);
+            }
+        }
+        
+    </script>
+</body>
+</html>
